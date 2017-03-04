@@ -37,6 +37,8 @@
    		mysqli_query($db_con,"INSERT INTO views(view_product) values('$pinf[1]')");
    		$select_product_views = mysqli_query($db_con,"SELECT * FROM views WHERE view_product='$pinf[1]' ");
    }else{
+
+      //Redirect to the home page
    	header("location: home.php");
    }
    ?>
