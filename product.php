@@ -1,6 +1,12 @@
 <?php
+
+   //starting a session
    session_start();
+
+   //including the file that allows us to connect with the database
    include 'php/connection.php';
+
+   //Get method to get the product that the user is looking for
    $searched_product = $_GET['product'];
    $select_product_from_database = mysqli_query($db_con,"SELECT * FROM products WHERE id='$searched_product' ");
    $date = date('d/m/Y');
