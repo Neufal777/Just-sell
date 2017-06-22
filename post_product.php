@@ -2,11 +2,18 @@
    session_start();
    
    if (isset($_SESSION['id'])) {
+
+      //Include the file that allows the program to get acces to the DB
       include 'php/connection.php';
+
    }else{
+
+      //Redirect the user to the index page
    	header("location: index.php");
    }
+
    ?>
+   
 <html>
    <head>
       <title>Upload Product</title>

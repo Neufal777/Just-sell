@@ -3,8 +3,9 @@
 	session_start();
 	include 'php/connection.php';
 
-	$to_delete = $_GET['post_to_delete_id'];
-	$active = $_SESSION['username'];
+	$to_delete = $_GET['post_to_delete_id']; //id of the product to delete
+
+	$active = $_SESSION['username']; //Active user [ Username ]
 
 	$check_product = mysqli_query($db_con,"SELECT * FROM products WHERE id='$to_delete' and product_seller='$active' ");
 

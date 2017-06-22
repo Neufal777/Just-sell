@@ -8,7 +8,9 @@
 
    //Get method to get the product that the user is looking for
    $searched_product = $_GET['product'];
+
    $select_product_from_database = mysqli_query($db_con,"SELECT * FROM products WHERE id='$searched_product' ");
+
    $date = date('d/m/Y');
    
    if (mysqli_num_rows($select_product_from_database)>0) {
@@ -56,8 +58,11 @@
       <div id="product_page_information_right_container">
          <h4 style='font-family:arial; color:#3E464C; font-size:15px;'><?php echo $pinf[0];; ?></h4>
          <hr style='margin-top:10px;border-top: 1px solid #EEEEE; margin-bottom:10px;'>
+
          <label>⛹ Seller </label>
+
          <a target='_blank' href='profile.php?username=<?php echo $pinf[2]; ?>'>
+         
             <h4 class='product_page_information_h4'> <?php echo $pinf[2]; ?></h4>
             <br>
          </a>
