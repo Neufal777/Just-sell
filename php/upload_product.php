@@ -10,6 +10,7 @@
 
 	// p_inf = PRODUCT INFORMATION
 	$p_inf = array(
+
 					mysqli_real_escape_string($db_con,$_POST['item_name']),
 					mysqli_real_escape_string($db_con,$_POST['item_categorie']),
 					mysqli_real_escape_string($db_con,$_POST['item_phone_number']),
@@ -18,6 +19,7 @@
 					mysqli_real_escape_string($db_con,$_POST['item_city']),
 					mysqli_real_escape_string($db_con,$_POST['item_price']),
 					mysqli_real_escape_string($db_con,$_POST['item_description']),
+
 					$_FILES['item_image_one']['name'],
 					$_FILES['item_image_two']['name'],
 					$_FILES['item_image_three']['name']
@@ -27,12 +29,15 @@
 		// Extension of the image one
 		$exp_image_one = explode('.', $_FILES['item_image_one']['name']);
 		$ext_image_one = strtolower(end($exp_image_one));
+
 		// Extension of the image two
 		$exp_image_two = explode('.', $_FILES['item_image_two']['name']);
 		$ext_image_two = strtolower(end($exp_image_two));
+
 		// Extension of the image two
 		$exp_image_three = explode('.', $_FILES['item_image_three']['name']);
 		$ext_image_three = strtolower(end($exp_image_three));
+
 		// FINAL NAMES FOR THE UPLOADED IMAGES
 		$final_image_one_name = 'thumbnail'.$product_seller.$rand_string.$_FILES['item_image_one']['name'];
 		$final_image_two_name = 'imagetwo'.$product_seller.$rand_string.$_FILES['item_image_two']['name'];
